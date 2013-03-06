@@ -196,7 +196,7 @@ class RSSHandler extends org.xml.sax.helpers.DefaultHandler {
 
     private static final String MEDIA_THUMBNAIL_HEIGHT = "height";
     private static final String MEDIA_THUMBNAIL_WIDTH = "width";
-    private static final String MEDIA_THUMBNAIL_URL = "url";
+    private static final String MEDIA_THUMBNAIL_URL = "href";
     private static final int DEFAULT_DIMENSION = -1;
 
     @Override
@@ -242,7 +242,7 @@ class RSSHandler extends org.xml.sax.helpers.DefaultHandler {
     setters.put("link", SET_LINK);
     setters.put("category", ADD_CATEGORY);
     setters.put("pubDate", SET_PUBDATE);
-    setters.put("media:thumbnail", ADD_MEDIA_THUMBNAIL);
+    setters.put("itunes:image", ADD_MEDIA_THUMBNAIL);
   }
 
   /**

@@ -6,3 +6,5 @@ target
 bin/
 gen/
 project.properties
+
+*.iml
