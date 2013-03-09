@@ -147,11 +147,11 @@ class RSSHandler extends org.xml.sax.helpers.DefaultHandler {
     private final Setter SET_LINK = new ContentSetter() {
         @Override
         public void set(String link) {
-            final android.net.Uri uri = android.net.Uri.parse(link);
+            //final android.net.Uri uri = android.net.Uri.parse(link);
             if (item == null) {
-                feed.setLink(uri);
+                feed.setLink(link);
             } else {
-                item.setLink(uri);
+                item.setLink(link);
             }
         }
     };

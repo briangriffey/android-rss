@@ -119,7 +119,7 @@ public class RSSReader implements java.io.Closeable {
       RSSFeed feed = parser.parse(feedStream);
 
       if (feed.getLink() == null) {
-        feed.setLink(android.net.Uri.parse(uri));
+        feed.setLink(uri);
       }
 
       return feed;

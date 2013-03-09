@@ -49,23 +49,23 @@ public class RSSBaseTest {
     RSSBase other = new Foo();
     assertTrue(base.equals(other));
 
-    other.setLink(android.net.Uri.parse("http://example.com/other"));
+    other.setLink("http://example.com/other");
     assertFalse(base.equals(other));
   }
 
   @Test
   public void equalsOtherLink() {
     RSSBase other = new Foo();
-    other.setLink(android.net.Uri.parse("http://example.com/other"));
-    base.setLink(android.net.Uri.parse("http://example.com/"));
+    other.setLink("http://example.com/other");
+    base.setLink("http://example.com/");
     assertFalse(base.equals(other));
   }
 
   @Test
   public void equalsLink() {
     RSSBase other = new Foo();
-    other.setLink(android.net.Uri.parse("http://example.com/"));
-    base.setLink(android.net.Uri.parse("http://example.com/"));
+    other.setLink("http://example.com/");
+    base.setLink("http://example.com/");
     assertTrue(base.equals(other));
   }
 

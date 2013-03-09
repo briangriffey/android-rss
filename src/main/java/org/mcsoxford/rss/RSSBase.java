@@ -16,6 +16,9 @@
 
 package org.mcsoxford.rss;
 
+import android.net.Uri;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -23,10 +26,10 @@ import java.util.ArrayList;
  * 
  * @author Mr Horn
  */
-abstract class RSSBase {
+abstract class RSSBase implements Serializable {
 
   private String title;
-  private android.net.Uri link;
+  private String link;
   private String description;
   private java.util.List<String> categories;
   private java.util.Date pubdate;
@@ -47,8 +50,12 @@ abstract class RSSBase {
     return description;
   }
 
-  public android.net.Uri getLink() {
+  public String getLink() {
     return link;
+  }
+
+  public Uri getUriLink() {
+      return Uri.parse(link);
   }
 
   public java.util.List<String> getCategories() {
@@ -67,7 +74,7 @@ abstract class RSSBase {
     this.title = title;
   }
 
-  void setLink(android.net.Uri link) {
+  void setLink(String link) {
     this.link = link;
   }
 
