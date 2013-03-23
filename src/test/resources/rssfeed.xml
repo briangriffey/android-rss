@@ -1,5 +1,7 @@
 <rss xmlns:media="http://search.yahoo.com/mrss/"
-     xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">  
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     version="2.0">
   <channel> 
     <title>Example Channel</title>  
     <link>http://example.com/</link>  
@@ -12,8 +14,8 @@
        <link>http://example.com/2010/11/07</link>
        <pubDate>Sun, 07 Nov 2010 08:22:14 GMT</pubDate>
        <description>Other things happened today</description>
-       <media:thumbnail width="66" height="49" url="http://example.com/media/images/12/jpg/_7_2.jpg"/>  
-       <media:thumbnail width="144" height="81" url="http://example.com/media/images/12/jpg/_7_2-1.jpg"/> 
+       <itunes:image width="66" height="49" url="http://example.com/media/images/12/jpg/_7_2.jpg"/>
+       <itunes:image width="144" height="81" url="http://example.com/media/images/12/jpg/_7_2-1.jpg"/>
     </item>
     <item>
       <title>News for October</title>

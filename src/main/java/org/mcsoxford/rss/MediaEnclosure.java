@@ -1,9 +1,13 @@
 package org.mcsoxford.rss;
 
+import android.net.Uri;
+
+import java.io.Serializable;
+
 /**
  * class created by @'briangriffey
  */
-public class MediaEnclosure {
+public class MediaEnclosure implements Serializable {
 
     private final String url;
     private final long length;
@@ -17,6 +21,10 @@ public class MediaEnclosure {
 
     public String getUrl() {
         return url;
+    }
+
+    public Uri getUri() {
+        return Uri.parse(url);
     }
 
     public long getLength() {

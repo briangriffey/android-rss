@@ -125,6 +125,13 @@ class RSSHandler extends org.xml.sax.helpers.DefaultHandler {
         }
     };
 
+    private final Setter ENCODED_CONTENT = new ContentSetter() {
+        @Override
+        public void set(String value) {
+              item.setEncodedContent(value);
+        }
+    };
+
     /**
      * Setter for an RSS &lt;content:encoded&gt; element inside an &lt;item&gt;
      * element.
@@ -221,7 +228,7 @@ class RSSHandler extends org.xml.sax.helpers.DefaultHandler {
                 return;
             }
 
-            item.addThumbnail(new MediaThumbnail(android.net.Uri.parse(url), height, width));
+            item.addThumbnail(new MediaThumbnail(url, height, width));
         }
 
     };
@@ -275,7 +282,9 @@ class RSSHandler extends org.xml.sax.helpers.DefaultHandler {
         setters.put("category", ADD_CATEGORY);
         setters.put("pubDate", SET_PUBDATE);
         setters.put("itunes:image", ADD_MEDIA_THUMBNAIL);
+        setters.put("media:thumbnail", ADD_MEDIA_THUMBNAIL);
         setters.put("enclosure", ENCLOSURE);
+        setters.put("content:encoded", ENCODED_CONTENT);
     }
 
     /**

@@ -16,15 +16,19 @@
 
 package org.mcsoxford.rss;
 
+import android.net.Uri;
+
+import java.io.Serializable;
+
 /**
  * Immutable class for media thumbnail RSS 2.0 data.
  * 
  * @author Mr Horn
  * @see http://search.yahoo.com/mrss/
  */
-public final class MediaThumbnail {
+public final class MediaThumbnail implements Serializable {
 
-  private final android.net.Uri url;
+  private final String url;
   private final int height;
   private final int width;
 
@@ -32,8 +36,12 @@ public final class MediaThumbnail {
    * Returns the URL of the thumbnail.
    * The return value is never {@code null}.
    */
-  public android.net.Uri getUrl() {
+  public String getUrl() {
     return url;
+  }
+
+  public Uri getUri() {
+      return Uri.parse(url);
   }
 
   /**
@@ -51,7 +59,7 @@ public final class MediaThumbnail {
   }
 
   /* Internal constructor for RSSHandler */
-  MediaThumbnail(android.net.Uri url, int height, int width) {
+  MediaThumbnail(String url, int height, int width) {
     this.url = url;
     this.height = height;
     this.width = width;
